@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerShooting : MonoBehaviour
 {
     public float fireRate = 0f;
+    public float Damage = 10f;
 
     float timeToFire = 0f;
     Transform firePoint;

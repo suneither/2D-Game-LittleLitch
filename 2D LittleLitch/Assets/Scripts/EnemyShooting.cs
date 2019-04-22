@@ -130,6 +130,8 @@ public class EnemyShooting : MonoBehaviour
             Mathf.Pow(knnTimeboltult, 2) +
             Mathf.Pow(distanceBeetweenPlayer - ultimateBoltDistance, 2))/1000;
 
+        print(knnDistanceOfMelle + "sss" + knnDistanceOfBasicBolt + "sss" + knnDistanceOfUltimateBolt + "sss");
+        print(melleAttackDamage + " sss" + basicBoltDamage + "sss" + ultimateBoltDamage);
         if(knnDistanceOfMelle < knnDistanceOfBasicBolt && knnDistanceOfMelle < knnDistanceOfUltimateBolt)
         {
             ultimateBoltDamage += ultimateBoltDamage * 0.001f * Random.Range(10,50);
