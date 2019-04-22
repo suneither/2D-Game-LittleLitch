@@ -177,12 +177,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780334e8d7688b74599931a98ccc6b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicBoltFireRate: 3
-  ultimateBoltFireRate: 0.1
+  basicBoltFireRate: 2.5
+  ultimateBoltFireRate: 0.5
   melleAttackRate: 2
   basicBoltDamage: 15
   ultimateBoltDamage: 15
   melleAttackDamage: 15
+  startBasicBoltDamage: 25
+  startUltimateBoltDamage: 50
+  startMelleAttackDamage: 10
   firePoint: {fileID: 4931724531527154}
   basicBolt: {fileID: 1110759228692580, guid: 31368fdf50bcc7c4a801ecc72bc49d89, type: 2}
   ultimateBolt: {fileID: 1601549921656324, guid: a8cd3dffd23c0be4895aabfc4e27a56e,
