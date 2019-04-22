@@ -26,10 +26,9 @@ namespace Completed
 
         public int columns = 8;                                         
         public int rows = 8;                                           
-        public Count wallCount = new Count(5, 9);
+        public Count wallCount = new Count(5, 9);                     
         //public Count foodCount = new Count(1, 5);                      
-        //public GameObject exit;       
-        public GameObject player;
+        //public GameObject exit;                                         
         public GameObject[] floorTiles;                                
         public GameObject[] wallTiles;                              
         public GameObject[] enemyTiles;                                
@@ -107,8 +106,6 @@ namespace Completed
             LayoutObjectAtRandom(wallTiles, wallCount.minimum, wallCount.maximum);
             int enemyCount = (int)Mathf.Log(level, 2f);
             LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount);
-            Vector3 posOfPlayer = new Vector3(2, 2, 0);
-            Instantiate(player, posOfPlayer, Quaternion.identity);
 
         }
     }
