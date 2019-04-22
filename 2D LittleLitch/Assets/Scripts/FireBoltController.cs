@@ -7,7 +7,6 @@ public class FireBoltController : MonoBehaviour {
     public float speed;
     private Rigidbody2D rb;
 
-    Vector2 moveDirection;
 
 	void Start ()
     {
@@ -26,7 +25,6 @@ public class FireBoltController : MonoBehaviour {
         }
         else
         {
-            Destroy(gameObject);
         }
     }
 }

@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4634482664906716}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4504964286933596}
   - component: {fileID: 114611231403190790}
   - component: {fileID: 114570927484371110}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Staff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 61354816356485508}
   - component: {fileID: 50322295595487082}
   - component: {fileID: 114727603970283774}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -202,10 +202,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeca9372bdb799344ae9c6b2088ac0cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 4
-  startRollTime: 1.23
-  rollSpeed: 7.5
-  rollCooldown: 0.7
+  movementSpeed: 5
+  dashCooldown: 0.2
+  dashSpeed: 50
+  startDashTime: 0.1
 --- !u!212 &212153681340404764
 SpriteRenderer:
   m_ObjectHideFlags: 1

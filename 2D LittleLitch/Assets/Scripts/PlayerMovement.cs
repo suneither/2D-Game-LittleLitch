@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public float dashSpeed;
     private float dashTime;
     public float startDashTime;
+    public float health;
 
     private void Start()
     {
