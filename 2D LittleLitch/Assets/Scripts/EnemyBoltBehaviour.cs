@@ -16,22 +16,28 @@ public class EnemyBoltBehaviour : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        Vector3 difference = target.position - transform.position;
-        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotZ + 90);
-        rb = GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector2(difference.x, difference.y).normalized * speed;
+        if(target == true)
+        {
+            Vector3 difference = target.position - transform.position;
+            float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, rotZ + 90);
+            rb = GetComponent<Rigidbody2D>();
+            rb.velocity = new Vector2(difference.x, difference.y).normalized * speed;
+        }
+       
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        if (other.gameObject.name.Equals("Player"))
+        if (col.gameObject.tag == "Player")
         {
-            other.gameObject.GetComponent<PlayerMovement>().health -= damage;
-        }
-        else
-        {
+            col.GetComponent<PlayerMovement>().health -= damage;
 
+            Destroy(gameObject);
+        }
+        if (col.gameObject.tag == "OuterWalls")
+        {
+            Destroy(gameObject);
         }
     }
 }
