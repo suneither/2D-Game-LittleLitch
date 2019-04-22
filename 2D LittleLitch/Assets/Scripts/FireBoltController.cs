@@ -6,7 +6,7 @@ public class FireBoltController : MonoBehaviour {
 
     public float speed;
     private Rigidbody2D rb;
-
+    public float damage;
 
 	void Start ()
     {
@@ -17,14 +17,17 @@ public class FireBoltController : MonoBehaviour {
         rb.velocity = new Vector2(difference.x, difference.y).normalized * speed;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        if(other.gameObject.name.Equals("Player") || other.gameObject.name.Equals(""))
+        if (col.gameObject.tag == "Enemy")
         {
+            col.GetComponent<EnemyMovement>().health -= damage;
             
+            Destroy(gameObject);
         }
-        else
+        if(col.gameObject.tag == "OuterWalls")
         {
+            Destroy(gameObject);
         }
     }
 }
