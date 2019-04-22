@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
+    public bool alright;
+    public Animator animator;
+
     public float movementSpeed;
 
     private Vector2 direction;
@@ -41,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             direction += Vector2.left;
+            
         }
         if (Input.GetKey(KeyCode.S))
         {
@@ -54,6 +58,16 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         rb.velocity = new Vector2(direction.x, direction.y) * movementSpeed;
+        
+       
+        animator.SetFloat("isWalking", rb.velocity.magnitude);
+        if (direction.x<0 &&!alright || direction.x>0&& alright) {
+            alright = !alright;
+            Vector3 flip= transform.localScale;
+        flip.x *= -1;
+        transform.localScale = flip; }
+        
+
     }
     private void Roll()
     {
@@ -68,8 +82,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Time.time > nextDashTime)
                 {
+                    animator.SetTrigger("dash");
                     nextDashTime = Time.time + dashCooldown;
                     rb.velocity = new Vector2(direction.x, direction.y) * dashSpeed;
+                    
                 }
             }
             dashTime -= Time.deltaTime;
