@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -13,9 +14,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Blocking
+  - InnerWall
+  - Player
   - 
   - 
   - 
@@ -40,4 +41,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floors
+    uniqueID: 1072280551
+    locked: 0
+  - name: InnerWalls
+    uniqueID: 2913938263
+    locked: 0
+  - name: OuterWalls
+    uniqueID: 817261033
+    locked: 0
+  - name: Unit
+    uniqueID: 3646286559
     locked: 0
